@@ -9,9 +9,10 @@ const port = 3000;
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use("/", indexRouter);
+
+app.use("/api", indexRouter);
 
 app.listen(port, async () => {
   await connectToMongo();
-  console.log(`Server started at http://localhost:${port} 🚀 `);
+  console.log(`Server started 🚀 `);
 });
